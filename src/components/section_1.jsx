@@ -39,18 +39,58 @@ export const Section_1 = () => {
       lightness: 10,
       alignment: "red",
     },
+    // {
+    //   ip: 5,
+    //   state: 1,
+    //   speed: 2,
+    //   whiteColor: 10,
+    //   yellowColor: 20,
+    //   redColor: 30,
+    //   greenColor: 40,
+    //   blueColor: 50,
+    //   effect: 5,
+    // }
   ]);
 
+  const transform_data = (trans) => {
+    if (trans.state) {
+      trans.state = 1;
+    } else {
+      trans.state = 0;
+    }
+    return trans;
+  };
+  const preProcess = () => {
+    const string = "{IP00110001S0C3W10Y20R30G40B50E2L0}";
+    // const stringP = "{IP00110001,S0,C3,W10,Y20,R30,G40,B50,E2,L0}";
+    // change IP to 0 , 1 , 3 , 4
+    const sampleGetData = [
+      {
+        ip: 0,
+        state: string.slice(12, 13),
+        speed: string.slice(14, 15),
+        whiteColor: string.slice(16, 18),
+        yellowColor: string.slice(19, 21),
+        redColor: string.slice(22, 24),
+        greenColor: string.slice(25, 27),
+        blueColor: string.slice(28, 30),
+        effect: string.slice(31, 32),
+      },
+    ];
+    // console.log(sampleGetData);
+  };
   const sendApi = (id) => {
-    console.log(checked[id - 1]);
+    const post_parameter = transform_data(checked[id - 1]);
+    preProcess();
+
+    // const post_string = `{IP0011${post_parameter.ip},S${post_parameter.state}CXWXXYXXRXXGXX}`;
+    // console.log(post_string);
   };
   const handleChange_color = (id, newAlignment) => {
-    console.log(id, newAlignment);
+    // console.log(id, newAlignment);
     const updateItems = checked.map((items) => {
-      // console.log(items);
-
       if (id === items.ip) {
-        console.log(items);
+        // console.log(items);
         return { ...items, alignment: newAlignment, color: newAlignment };
       }
       return items;
@@ -59,10 +99,10 @@ export const Section_1 = () => {
   };
 
   const handleChange = (id, newState) => {
-    console.log(newState);
+    // console.log(newState);
     const updateItems = checked.map((items) => {
       if (id === items.ip) {
-        console.log(items);
+        // console.log(items);
         return { ...items, state: !newState };
       }
       return items;
