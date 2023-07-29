@@ -1,0 +1,110 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main-container-section-2 {
+  /* 1140px */
+  max-width: 120rem;
+  /* max-height: 1024px; */
+  height: 100vh;
+  /* padding: 0 3.2rem; */
+  margin: 0 auto;
+
+  background-color: #2a2c32;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.big-background-circle {
+  background: #4b4e57;
+  border-radius: 50%;
+  width: 1126px;
+  height: 1126px;
+  position: absolute;
+
+  left: 60%;
+  bottom: 0rem;
+}
+.little-background-circle {
+  position: relative;
+  background: #d9d9d9;
+  border-radius: 50%;
+  width: 550px;
+  height: 550px;
+
+  left: -15rem;
+  bottom: -10rem;
+}
+.background-light {
+  position: absolute;
+  left: -10%;
+  bottom: 0rem;
+}
+.left-side-main-container-border {
+  display: flex;
+  gap: 10px;
+  color: white;
+  border-radius: 50px;
+  background-color: #4b4e57;
+
+  /* max-width: 566px;
+  max-height: 166px; */
+}
+.left-side-main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  margin: 4.2rem;
+}
+.details-grid-container {
+  font-size: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.details-grid-container-light {
+  text-align: left;
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+.details-grid-container-color {
+  text-align: left;
+  grid-column: 1 / 2;
+  grid-row: 2;
+}
+.details-grid-container-speed {
+  text-align: left;
+  grid-column: 3 / 4;
+  grid-row: 2;
+}
+.details-grid-container-state {
+  text-align: left;
+  grid-column: 1 / 2;
+  grid-row: 3;
+}
+.details-grid-container-colorsLight {
+  text-align: left;
+  grid-column: 3 / 4;
+  grid-row: 3;
+}
+
+.buttons-style-details {
+  border: none;
+  padding: 30px;
+  align-items: center;
+  background-color: #d9d9d9;
+  overflow: hidden;
+  border-radius: 0px 50px 50px 0px;
+}
+
+.right-side-main-container {
+  /* color:#4B4E57; */
+}
