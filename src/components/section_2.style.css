@@ -17,7 +17,7 @@
   justify-content: space-between;
   position: relative;
   overflow-x: hidden;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 .big-background-circle {
   background: #4b4e57;

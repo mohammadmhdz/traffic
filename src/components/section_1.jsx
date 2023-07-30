@@ -8,14 +8,64 @@ import { BsLightbulb } from "react-icons/bs";
 import { BsLightbulbFill } from "react-icons/bs";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import { Section_2 } from "./section_2";
 
 export const Section_1 = () => {
-  const [checked, setChecked] = useState([]);
+  const [checked, setChecked] = useState([
+    {
+      ip: 0,
+      state: false,
+      speed: 2,
+      whiteColor: 10,
+      yellowColor: 20,
+      redColor: 30,
+      greenColor: 40,
+      blueColor: 50,
+      colorsLightnes: 60,
+      effect: 8,
+    },
+    {
+      ip: 1,
+      state: false,
+      speed: 2,
+      whiteColor: 10,
+      yellowColor: 20,
+      redColor: 30,
+      greenColor: 40,
+      blueColor: 50,
+      colorsLightnes: 60,
+      effect: 8,
+    },
+    {
+      ip: 2,
+      state: false,
+      speed: 2,
+      whiteColor: 10,
+      yellowColor: 20,
+      redColor: 30,
+      greenColor: 40,
+      blueColor: 50,
+      colorsLightnes: 60,
+      effect: 8,
+    },
+    {
+      ip: 3,
+      state: false,
+      speed: 2,
+      whiteColor: 10,
+      yellowColor: 20,
+      redColor: 30,
+      greenColor: 40,
+      blueColor: 50,
+      colorsLightnes: 60,
+      effect: 8,
+    },
+  ]);
 
   // this is for fetch and preProcessing the data
   useEffect(() => {
     const preProcess = () => {
-      const string = "{IP00110001,S0,C3,W05,Y00,R00,G40,B00,E2,L0}";
+      const string = "{IP00110001,S0,C3,W50,Y00,R00,G40,B00,E2,L0}";
 
       const sampleGetData = [
         {
@@ -61,10 +111,22 @@ export const Section_1 = () => {
           console.log("ERROR");
           break;
       }
-      // console.log(sampleGetData);
-      return sampleGetData;
+      // console.log(checked, "first");
+      const newArr = [...checked];
+      const updatedItem = newArr.find((a) => a.ip === sampleGetData[0].ip);
+      console.log(updatedItem.ip, "updatedItem");
+      updatedItem.state = sampleGetData[0].state;
+      updatedItem.speed = sampleGetData[0].speed;
+      updatedItem.whiteColor = sampleGetData[0].whiteColor;
+      updatedItem.yellowColor = sampleGetData[0].yellowColor;
+      updatedItem.redColor = sampleGetData[0].redColor;
+      updatedItem.greenColor = sampleGetData[0].greenColor;
+      updatedItem.blueColor = sampleGetData[0].blueColor;
+      updatedItem.effect = sampleGetData[0].effect;
+      return newArr;
     };
     setChecked(preProcess());
+
     // const fetchRequest = async () => {
     //   const res = await fetch("http://127.0.0.1:8000/transaction/Nfts/12/");
     //   // "http://127.0.0.1:8000/account/artists/6/get_nfts/"
@@ -132,71 +194,75 @@ export const Section_1 = () => {
     // });
     // setChecked(updateItems);
   };
-  console.log(checked, "fecthed date");
+  // console.log(checked, "fecthed date");
   return (
-    <div className="main-container">
-      {checked.map((items, index) => {
-        // console.log(items.state);
-        return (
-          <div className="main-container-details">
-            {items.state ? (
-              <BsLightbulbFill size={25} color={items.color} />
-            ) : (
-              <BsLightbulb size={25} color="gray" />
-            )}
-            <p1>
-              لامپ شماره <span>{items.ip}</span>
-            </p1>
-            <Switch
-              value={items.state}
-              onClick={() => handleChange(items.ip, items.state)}
-              checked={items.state}
-              inputProps={{ "aria-label": "controlled" }}
-            />
-            <Box width={300}>
-              <Slider
-                id={items.ip}
-                value={+items.greenColor}
-                onChange={(e, val) => handleChange_slider(items.ip, e, val)}
-                disabled={!items.state}
-                size="small"
-                defaultValue={+items.greenColor}
-                aria-label="Small"
-                valueLabelDisplay="auto"
-              />
-            </Box>
-            <ToggleButtonGroup
-              disabled={!items.state}
-              color="primary"
-              // value={handleChange_color().split("Color")}
-              // onClick={(e, value) => handleChange_color(items.ip, value)}
-              exclusive
-              aria-label="Platform"
-            >
-              <ToggleButton
-                onClick={(e, val) => handleChange_color(items.ip, val)}
-                value="red"
-              >
-                red
-              </ToggleButton>
-              <ToggleButton
-                onClick={(e, val) => handleChange_color(items.ip, val)}
-                value="green"
-              >
-                green
-              </ToggleButton>
-              <ToggleButton
-                onClick={(e, val) => handleChange_color(items.ip, val)}
-                value="blue"
-              >
-                blue
-              </ToggleButton>
-            </ToggleButtonGroup>
-            <button onClick={() => sendApi(items.ip)}>submit</button>
-          </div>
-        );
-      })}
-      {/* <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" /> */}
+    <div>
+      <Section_2 lights={checked}></Section_2>
     </div>
   );
+  // <div className="main-container">
+  //   {checked.map((items, index) => {
+  //     // console.log(items.state);
+  //     return (
+  //       <div className="main-container-details">
+  //         {items.state ? (
+  //           <BsLightbulbFill size={25} color={items.color} />
+  //         ) : (
+  //           <BsLightbulb size={25} color="gray" />
+  //         )}
+  //         <p1>
+  //           لامپ شماره <span>{items.ip}</span>
+  //         </p1>
+  //         <Switch
+  //           value={items.state}
+  //           onClick={() => handleChange(items.ip, items.state)}
+  //           checked={items.state}
+  //           inputProps={{ "aria-label": "controlled" }}
+  //         />
+  //         <Box width={300}>
+  //           <Slider
+  //             id={items.ip}
+  //             value={+items.greenColor}
+  //             onChange={(e, val) => handleChange_slider(items.ip, e, val)}
+  //             disabled={!items.state}
+  //             size="small"
+  //             defaultValue={+items.greenColor}
+  //             aria-label="Small"
+  //             valueLabelDisplay="auto"
+  //           />
+  //         </Box>
+  //         <ToggleButtonGroup
+  //           disabled={!items.state}
+  //           color="primary"
+  //           // value={handleChange_color().split("Color")}
+  //           // onClick={(e, value) => handleChange_color(items.ip, value)}
+  //           exclusive
+  //           aria-label="Platform"
+  //         >
+  //           <ToggleButton
+  //             onClick={(e, val) => handleChange_color(items.ip, val)}
+  //             value="red"
+  //           >
+  //             red
+  //           </ToggleButton>
+  //           <ToggleButton
+  //             onClick={(e, val) => handleChange_color(items.ip, val)}
+  //             value="green"
+  //           >
+  //             green
+  //           </ToggleButton>
+  //           <ToggleButton
+  //             onClick={(e, val) => handleChange_color(items.ip, val)}
+  //             value="blue"
+  //           >
+  //             blue
+  //           </ToggleButton>
+  //         </ToggleButtonGroup>
+  //         <button onClick={() => sendApi(items.ip)}>submit</button>
+  //       </div>
+  //     );
+  //   })}
+  //   {/* <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" /> */}
+  // </div>
+  // );
 };

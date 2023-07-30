@@ -1,38 +1,26 @@
 import "./section_2.style.css";
 import light from "../img/light.png";
 import { FiSettings } from "react-icons/fi";
-export const Section_2 = () => {
-  const sampleGetData = [
-    {
-      ip: "test1",
-      state: true,
-      speed: 2,
-      whiteColor: "test",
-      yellowColor: "test",
-      redColor: "test",
-      greenColor: "test",
-      blueColor: "test",
-      colorsLightnes: 20,
-      effect: 4,
-    },
-    {
-      ip: "test2",
-      state: false,
-      speed: "test",
-      whiteColor: "test",
-      yellowColor: "test",
-      redColor: "test",
-      greenColor: "test",
-      blueColor: "test",
-      colorsLightnes: 20,
-      effect: "test",
-    },
-  ];
+export const Section_2 = (lights = {}) => {
+  const {
+    ip = "test1",
+    state = true,
+    speed = 2,
+    whiteColor = "test",
+    yellowColor = "test",
+    redColor = "test",
+    greenColor = "test",
+    blueColor = "test",
+    colorsLightnes = 20,
+    effect = 4,
+  } = lights.lights;
+  console.log(lights.lights[0], "kkkk");
+
   return (
     <div className="main-container-section-2">
       <div>
         <div className="left-side-main-container">
-          {sampleGetData.map((items) => {
+          {lights.lights.map((items) => {
             return (
               <div>
                 <div className="left-side-main-container-border">
