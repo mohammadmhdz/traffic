@@ -1,0 +1,46 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section-3-main-container {
+  max-width: 120rem;
+  /* max-height: 1024px; */
+  height: 100vh;
+  /* padding: 0 3.2rem; */
+  margin: 0 auto;
+  background-color: #2a2c32;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  overflow-x: hidden;
+}
+
+.section-3-left-main-container {
+}
+
+/* right side STYLES */
+.section-3-right-main-container {
+  /* position: relative; */
+}
+.section-3-light-2 {
+  position: absolute;
+  left: 71%;
+  top: 20%;
+}
+.section-3-light-3 {
+  position: absolute;
+  left: 55%;
+  top: 24%;
+}
+.section-3-inner-circle {
+  width: 750px;
+  height: 750px;
+  border: 10px solid #b3b3b3;
+  border-radius: 50%;
+  position: absolute;
+  left: 58%;
+  top: 2%;
+}
