@@ -7,6 +7,7 @@ import { styled } from "@mui/material/styles";
 import { Github, GithubPicker } from "react-color";
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 export const Section_3 = () => {
   const [checked, setChecked] = useState([
     {
@@ -149,7 +150,6 @@ export const Section_3 = () => {
         </div>
         <div className="section-3-border-container">
           <div className="section-3-border-container-name">speed</div>
-
           <Slider
             className="slider-style"
             id={checked[0].ip}
@@ -161,8 +161,9 @@ export const Section_3 = () => {
             aria-label="Small"
             valueLabelDisplay="auto"
           />
+          <div style={{ color: "white" }}>{checked[0].speed}%</div>
         </div>
-        <div className="section-3-border-container">
+        <div className="section-3-border-container ">
           <div className="section-3-border-container-name">hardness</div>
           <Slider
             className="slider-style"
@@ -175,13 +176,14 @@ export const Section_3 = () => {
             aria-label="Small"
             valueLabelDisplay="auto"
           />
+          <div style={{ color: "white" }}>{checked[0].speed}%</div>
         </div>
         <div className="section-3-border-container">
           <div className="section-3-border-container-name">color</div>
           <GithubPicker />
         </div>
       </div>
-
+      {/* <Link to="/sec">here</Link> */}
       <div className="section-3-right-main-container">
         <img className="section-3-light-2" src={light2} alt="light2" />
         <img className="section-3-light-3" src={light3} alt="light2" />
@@ -190,3 +192,4 @@ export const Section_3 = () => {
     </div>
   );
 };
+// export default Section_3;

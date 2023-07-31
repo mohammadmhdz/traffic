@@ -9,6 +9,7 @@ import { BsLightbulbFill } from "react-icons/bs";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { Section_2 } from "./section_2";
+import { Link } from "react-router-dom";
 
 export const Section_1 = () => {
   const [checked, setChecked] = useState([

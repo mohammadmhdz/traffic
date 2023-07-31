@@ -1,6 +1,7 @@
 import "./section_2.style.css";
 import light from "../img/light.png";
 import { FiSettings } from "react-icons/fi";
+import { Link } from "react-router-dom";
 export const Section_2 = (lights = {}) => {
   const {
     ip = "test1",
@@ -41,9 +42,10 @@ export const Section_2 = (lights = {}) => {
                       hardness :{items.colorsLightnes}
                     </div>
                   </div>
-
                   <button className="buttons-style-details">
-                    <FiSettings size={45} />
+                    <Link to="/post" className="section-2-link-style">
+                      <FiSettings size={45} />
+                    </Link>
                   </button>
                 </div>
               </div>
@@ -52,7 +54,6 @@ export const Section_2 = (lights = {}) => {
         </div>
       </div>
       <div className="right-side-main-container">
-        {/* <div className=""></div> */}
         <div className="big-background-circle"></div>
         <div className="little-background-circle">
           <img className="background-light" src={light} alt="Logo" />
@@ -61,3 +62,4 @@ export const Section_2 = (lights = {}) => {
     </div>
   );
 };
+// export default Section_2;

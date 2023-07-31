@@ -104,7 +104,9 @@
   overflow: hidden;
   border-radius: 0px 50px 50px 0px;
 }
-
+.section-2-link-style {
+  color: black;
+}
 .right-side-main-container {
   /* color:#4B4E57; */
 }
