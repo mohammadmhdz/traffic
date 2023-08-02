@@ -1,15 +1,15 @@
 import React from "react";
-import Switch from "@mui/material/Switch";
 import { useState, useEffect } from "react";
-import Box from "@mui/material/Box";
-import Slider from "@mui/material/Slider";
 import "./section_1.style.css";
-import { BsLightbulb } from "react-icons/bs";
-import { BsLightbulbFill } from "react-icons/bs";
-import ToggleButton from "@mui/material/ToggleButton";
-import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { Section_2 } from "./section_2";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+// import Switch from "@mui/material/Switch";
+// import Box from "@mui/material/Box";
+// import Slider from "@mui/material/Slider";
+// import { BsLightbulb } from "react-icons/bs";
+// import { BsLightbulbFill } from "react-icons/bs";
+// import ToggleButton from "@mui/material/ToggleButton";
+// import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
 export const Section_1 = () => {
   const [checked, setChecked] = useState([
@@ -27,7 +27,7 @@ export const Section_1 = () => {
     },
     {
       ip: 1,
-      state: false,
+      state: true,
       speed: 2,
       whiteColor: 10,
       yellowColor: 20,

@@ -15,7 +15,7 @@ export const Section_2 = (lights = {}) => {
     colorsLightnes = 20,
     effect = 4,
   } = lights.lights;
-  console.log(lights.lights[0], "kkkk");
+  // console.log(lights.lights, "kkkk");
 
   return (
     <div className="main-container-section-2">
@@ -43,7 +43,11 @@ export const Section_2 = (lights = {}) => {
                     </div>
                   </div>
                   <button className="buttons-style-details">
-                    <Link to="/post" className="section-2-link-style">
+                    <Link
+                      to="/post"
+                      state={{ item: items, data: lights }}
+                      className="section-2-link-style"
+                    >
                       <FiSettings size={45} />
                     </Link>
                   </button>
