@@ -1,7 +1,8 @@
-import "./section_2.style.css";
-import light from "../img/light.png";
 import { FiSettings } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import light from "../img/light-2-2.png";
+import light3 from "../img/light-3.png";
+import "./section_2.style.css";
 export const Section_2 = (lights = {}) => {
   const {
     ip = "test1",
@@ -21,36 +22,54 @@ export const Section_2 = (lights = {}) => {
     <div className="main-container-section-2">
       <div>
         <div className="left-side-main-container">
+          <h1 className="left-side-main-header-1">لیست چراغ ها</h1>
+          {/* <hr /> */}
           {lights.lights.map((items) => {
             return (
               <div>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <hr className="hr-line-lights-style" />
+                </div>
+                <div className="title-state-flex-container">
+                  {items.ip}
+                  <h1>چراغ شماره</h1>
+                </div>
                 <div className="left-side-main-container-border">
-                  <div className="details-grid-container">
-                    <div className="details-grid-container-light">
-                      Light : {items.ip}
-                    </div>
-                    <div className="details-grid-container-color">
-                      color : {items.whiteColor}
-                    </div>
-                    <div className="details-grid-container-speed">
-                      speed : {items.speed}
-                    </div>
+                  <div className="details-flex-container">
+                    <button className="buttons-style-details">
+                      <Link
+                        to="/post"
+                        state={{ item: items, data: lights }}
+                        className="section-2-link-style"
+                      >
+                        <FiSettings className="fiSetting-button" size={48} />
+                      </Link>
+                    </button>
                     <div className="details-grid-container-state">
-                      status : {items.state}
+                      وضعیت : {items.state ? "روشن" : "خاموش"}
+                    </div>
+                    {/* <div className="details-grid-container-light">
+                      چراغ : {items.ip}
+                    </div> */}
+                    <div className="details-grid-container-speed">
+                      سرعت روشنایی : {items.speed}
                     </div>
                     <div className="details-grid-container-colorsLight">
-                      hardness :{items.colorsLightnes}
+                      شدت روشنایی : {items.colorsLightnes}
+                    </div>
+                    <div className="details-flex-color-container">
+                      <button
+                        style={{
+                          width: 30,
+                          height: 20,
+                          borderRadius: 8,
+                          backgroundColor: "red",
+                        }}
+                      ></button>
+
+                      <div>: رنگ </div>
                     </div>
                   </div>
-                  <button className="buttons-style-details">
-                    <Link
-                      to="/post"
-                      state={{ item: items, data: lights }}
-                      className="section-2-link-style"
-                    >
-                      <FiSettings size={45} />
-                    </Link>
-                  </button>
                 </div>
               </div>
             );
@@ -58,10 +77,10 @@ export const Section_2 = (lights = {}) => {
         </div>
       </div>
       <div className="right-side-main-container">
-        <div className="big-background-circle"></div>
-        <div className="little-background-circle">
-          <img className="background-light" src={light} alt="Logo" />
-        </div>
+        {/* <div className="big-background-circle"></div> */}
+        {/* <div className="little-background-circle"></div> */}
+        {/* <img className="little-background-light-3" src={light3} alt="Logo" /> */}
+        <img className="background-light" src={light} alt="Logo" />
       </div>
     </div>
   );

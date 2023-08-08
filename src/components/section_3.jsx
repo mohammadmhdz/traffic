@@ -1,16 +1,20 @@
 import "./section_3.style.css";
+import light from "../img/light.png";
 import light2 from "../img/light-2.png";
+import vector from "../img/Vector.png";
 import light3 from "../img/light-3.png";
 import Slider from "@mui/material/Slider";
 import Switch from "@mui/material/Switch";
 import { styled } from "@mui/material/styles";
-import { GithubPicker } from "react-color";
+import { ChromePicker } from "react-color";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
+import { colors } from "@mui/material";
 // import { Link } from "react-router-dom";
 export const Section_3 = () => {
   const input = useLocation();
   const [item, setItem] = useState([input.state.item]);
+  const [color, setColor] = useState([]);
   const [checked, setChecked] = useState([
     {
       ip: 0,
@@ -132,6 +136,7 @@ export const Section_3 = () => {
 
   const handleChangeColor = (event, color) => {
     // we have everything of our color
+    setColor({ background: event.hex });
     console.log(event.rgb, "event");
     console.log(color, "color");
     // color = {
@@ -156,25 +161,31 @@ export const Section_3 = () => {
 
   return (
     <div className="section-3-main-container">
+      <div className="section-3-right-main-container">
+        <img className="section-3-light-2" src={light} alt="light2" />
+        <img className="section-3-light-3" src={vector} alt="light2" />
+        <div className="section-3-left-circle"></div>
+        <div className="section-2-right-circle"></div>
+      </div>
       <div className="section-3-left-main-container">
         <h1>light {item[0].ip}</h1>
         <div className="section-3-border-container">
-          <div className="section-3-border-container-name">state</div>
           <MaterialUISwitch
             value={item[0].state}
             checked={item[0].state}
             onClick={(e) => handleChangeState(e.target.checked)}
           ></MaterialUISwitch>
+          <div style={{ color: "white" }}>وضعیت چراغ</div>
         </div>
-        <div className="section-3-border-container">
-          <div className="section-3-border-container-name">speed</div>
+        <div className="section-3-border-container  ">
+          <div className="section-3-border-container-name">: سرعت روشنایی</div>
           <Slider
             className="slider-style"
             id={item[0].ip}
             value={+item[0].speed}
             onChange={(e, val) => SpeedSlider(item[0].ip, e, val)}
             disabled={!item[0].state}
-            size="small"
+            size="medium"
             defaultValue={+item[0].speed}
             aria-label="Small"
             valueLabelDisplay="auto"
@@ -182,7 +193,7 @@ export const Section_3 = () => {
           <div style={{ color: "white" }}>{item[0].speed}%</div>
         </div>
         <div className="section-3-border-container ">
-          <div className="section-3-border-container-name">hardness</div>
+          <div className="section-3-border-container-name">: شدت روشنایی</div>
           <Slider
             className="slider-style"
             id={checked[0].ip}
@@ -197,17 +208,12 @@ export const Section_3 = () => {
           <div style={{ color: "white" }}>{checked[0].speed}%</div>
         </div>
         <div className="section-3-border-container">
-          <div className="section-3-border-container-name">color</div>
-          <GithubPicker
-            // colors={["#000000"]}
+          <div className="section-3-border-container-name">: رنگ</div>
+          <ChromePicker
+            color={color.background}
             onChange={(e, color) => handleChangeColor(e, color)}
           />
         </div>
-      </div>
-      <div className="section-3-right-main-container">
-        <img className="section-3-light-2" src={light2} alt="light2" />
-        <img className="section-3-light-3" src={light3} alt="light2" />
-        <div className="section-3-inner-circle"></div>
       </div>
     </div>
   );

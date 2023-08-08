@@ -16,34 +16,45 @@
   position: relative;
 
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 /* .section-3-switch-style.PrivateSwitchBase-input.MuiSwicth-input {
   color: red;
 } */
 .section-3-left-main-container {
-  margin: 60px 0px 0px 100px;
+  margin: 60px 100px 0px 0px;
   display: flex;
   flex-direction: column;
   gap: 40px;
   text-align: left;
   /* align-items: center; */
 }
-.section-3-border-container-name {
-  position: absolute;
-  color: white;
-  padding: 0px 20px 0px 20px;
-  bottom: 93%;
-  overflow: hidden;
-  background-color: #2a2c32;
-}
+
 .section-3-border-container {
   position: relative;
   width: 379px;
-  border: 1px solid white;
+  /* border: 1px solid white; */
+  background-color: #31343b;
   border-radius: 20px;
   padding: 40px 30px 40px 30px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 20px;
+}
+.section-3-border-container-name {
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  padding: 0px 0px 10px 20px;
+  bottom: 60%;
+  right: 8%;
+  /* overflow: hidden; */
+  /* background-color: #2a2c32; */
+}
+.section-3-border-container-name-slider {
+  /* display: flex; */
+  /* justify-content: space-between; */
 }
 .slider-style.MuiSlider-root {
   color: #d9d9d9;
@@ -55,20 +66,33 @@
 }
 .section-3-light-2 {
   position: absolute;
-  left: 74.5%;
+  /* left: 74.5%; */
   top: 20%;
+  z-index: 1;
 }
 .section-3-light-3 {
   position: absolute;
-  left: 60%;
-  top: 24%;
+  left: 10%;
+  top: 10%;
 }
-.section-3-inner-circle {
-  width: 750px;
-  height: 750px;
-  border: 10px solid #b3b3b3;
+.section-3-left-circle {
+  width: 1239px;
+  height: 1239px;
+  /* border: 10px solid #b3b3b3; */
   border-radius: 50%;
   position: absolute;
-  left: 60%;
-  top: 2%;
+  background-color: #171c20;
+  left: 55%;
+  top: 3%;
+}
+.section-2-right-circle {
+  width: 1239px;
+  height: 1239px;
+  /* border: 10px solid #b3b3b3; */
+  border-radius: 50%;
+  position: absolute;
+  background-color: #171c20b2;
+  left: -20%;
+  bottom: 3%;
+  /* z-index: 1; */
 }

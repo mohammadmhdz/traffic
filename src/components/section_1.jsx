@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./section_1.style.css";
 import { Section_2 } from "./section_2";
+import axios from "axios";
 // import { Link } from "react-router-dom";
 // import Switch from "@mui/material/Switch";
 // import Box from "@mui/material/Box";
@@ -129,13 +130,78 @@ export const Section_1 = () => {
     setChecked(preProcess());
 
     // const fetchRequest = async () => {
-    //   const res = await fetch("http://127.0.0.1:8000/transaction/Nfts/12/");
+    //   const res = await fetch("http://193.36.84.113:8080/system/data");
     //   // "http://127.0.0.1:8000/account/artists/6/get_nfts/"
     //   const requests = await res.json();
-    //   setRequests(requests);
+    //   console.log(requests);
+    //   // setRequests(requests);
     // };
-
     // fetchRequest();
+    // ---------------------------
+    // const config = {
+    //   headers: { "Access-Control-Allow-Origin": "*" },
+    // };
+    // const url = "http://193.36.84.113:8080/system/data";
+    // // Make a request for a user with a given ID
+    // axios
+    //   .get("http://193.36.84.113:8080/system/data")
+    //   .then((res) => {
+    //     // handle success
+    //     console.log("ok");
+    //     console.log(res.data);
+    //     console.log(res.error);
+    //     console.log(res.headers);
+    //   })
+    //   .catch((err) => {
+    //     // handle error
+    //     console.log(err);
+    //   });
+    // ---------------------------
+    // axios("http://193.36.84.113:8080/system/data", {
+    //   method: "GET",
+    //   headers: {
+    //     "Access-Control-Allow-Origin": "*",
+    //     "Content-Type": "json",
+    //     // withCredentials: true,
+    //     // mode: "no-cors",
+    //   },
+    // }).then((res) => console.log(res));
+    // ---------------------------
+    // fetch("http://193.36.84.113:8080/system/data").then((res) =>
+    //   console.log(res.json())
+    // );
+    // ---------------------------
+    // var options = {
+    //   method: "GET",
+    //   headers: {
+    //     "Access-Control-Allow-Origin": "*",
+    //     "Content-Type": "application/json",
+    //     mode: "no-cors",
+    //   },
+    // };
+    // fetch("http://193.36.84.113:8080/system/data", options)
+    //   .then(function (res) {
+    //     return res.json();
+    //   })
+    //   .then(function (resJson) {
+    //     return resJson;
+    //   });
+    // ---------------------------
+    // axios
+    //   .get("http://193.36.84.113:8080/system/data", {
+    //     headers: {
+    //       "Access-Control-Allow-Origin": "*", // Replace '*' with your desired origin or specific domain
+    //       "Content-Type": "application/json",
+    //     },
+    //   })
+    //   .then((response) => {
+    //     // Handle the response data here
+    //     console.log(response.data);
+    //   })
+    //   .catch((error) => {
+    //     // Handle any errors that occur during the request
+    //     console.error("Error fetching data:", error);
+    //   });
   }, []);
 
   // preparing the data and sen it
