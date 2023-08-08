@@ -1,15 +1,13 @@
 import "./section_3.style.css";
-import light from "../img/light.png";
-import light2 from "../img/light-2.png";
-import vector from "../img/Vector.png";
-import light3 from "../img/light-3.png";
 import Slider from "@mui/material/Slider";
 import Switch from "@mui/material/Switch";
+import { MdArrowBackIos } from "react-icons/md";
 import { styled } from "@mui/material/styles";
-import { ChromePicker } from "react-color";
+import { CirclePicker, HuePicker, SliderPicker } from "react-color";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-import { colors } from "@mui/material";
+import { Link } from "react-router-dom";
+
 // import { Link } from "react-router-dom";
 export const Section_3 = () => {
   const input = useLocation();
@@ -161,24 +159,37 @@ export const Section_3 = () => {
 
   return (
     <div className="section-3-main-container">
+      {/* <img className="section-3-light-2" src={light3} alt="light2" /> */}
       <div className="section-3-right-main-container">
-        <img className="section-3-light-2" src={light} alt="light2" />
-        <img className="section-3-light-3" src={vector} alt="light2" />
-        <div className="section-3-left-circle"></div>
-        <div className="section-2-right-circle"></div>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <button className="section-3-back-button">
+            <MdArrowBackIos />
+            تنظیمات کلیه چراغ ‌ها
+          </button>
+        </Link>
+        {/*<img className="section-3-light-3" src={vector} alt="light2" /> */}
+        {/* <div className="section-3-left-circle"></div> */}
+        {/* <div className="section-2-right-circle"></div> */}
       </div>
       <div className="section-3-left-main-container">
-        <h1>light {item[0].ip}</h1>
+        {/* <h1>light {item[0].ip}</h1> */}
         <div className="section-3-border-container">
           <MaterialUISwitch
             value={item[0].state}
             checked={item[0].state}
             onClick={(e) => handleChangeState(e.target.checked)}
           ></MaterialUISwitch>
-          <div style={{ color: "white" }}>وضعیت چراغ</div>
+          <div style={{ color: "white", fontSize: "28px" }}>وضعیت چراغ</div>
         </div>
-        <div className="section-3-border-container  ">
-          <div className="section-3-border-container-name">: سرعت روشنایی</div>
+        <div className="section-3-border-container section-3-speed-intensity ">
+          <div className="section-3-speed-intensity-name-border">
+            <div className="section-3-speed-intensity-percentage">
+              {item[0].speed}%
+            </div>
+            <div className="section-3-border-container-name">
+              : سرعت روشنایی
+            </div>
+          </div>
           <Slider
             className="slider-style"
             id={item[0].ip}
@@ -187,13 +198,17 @@ export const Section_3 = () => {
             disabled={!item[0].state}
             size="medium"
             defaultValue={+item[0].speed}
-            aria-label="Small"
+            aria-label="small"
             valueLabelDisplay="auto"
           />
-          <div style={{ color: "white" }}>{item[0].speed}%</div>
         </div>
-        <div className="section-3-border-container ">
-          <div className="section-3-border-container-name">: شدت روشنایی</div>
+        <div className="section-3-border-container   section-3-speed-intensity">
+          <div className="section-3-speed-intensity-name-border">
+            <div className="section-3-speed-intensity-percentage">
+              {checked[0].speed}%
+            </div>
+            <div className="section-3-border-container-name">: شدت روشنایی</div>
+          </div>
           <Slider
             className="slider-style"
             id={checked[0].ip}
@@ -205,15 +220,36 @@ export const Section_3 = () => {
             aria-label="Small"
             valueLabelDisplay="auto"
           />
-          <div style={{ color: "white" }}>{checked[0].speed}%</div>
         </div>
-        <div className="section-3-border-container">
-          <div className="section-3-border-container-name">: رنگ</div>
-          <ChromePicker
+        <div className="section-3-border-container section-3-speed-intensity">
+          <div className="section-3-speed-intensity-name-border">
+            <button
+              style={{
+                width: 90,
+                height: 41,
+                border: "none",
+                borderRadius: 25,
+                backgroundColor: color.background,
+              }}
+            ></button>
+            <div className="section-3-border-container-name">: رنگ</div>
+          </div>
+          {/* div.hue-horizontal for this part css */}
+          <HuePicker
+            width={"500px"}
             color={color.background}
             onChange={(e, color) => handleChangeColor(e, color)}
           />
         </div>
+        <div className="section-3-border-container">
+          <SliderPicker
+            color={color.background}
+            className="section-3-sliderPicker"
+            onChange={(e, color) => handleChangeColor(e, color)}
+          />
+          <div className="section-3-border-container-name">: رنگ</div>
+        </div>
+        <button className="section-3-submit-button">ذخیره‌ی تغییرات</button>
       </div>
     </div>
   );
