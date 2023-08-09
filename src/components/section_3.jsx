@@ -1,15 +1,18 @@
 import "./section_3.style.css";
+import "./section_3.style.responsive.css";
 import Slider from "@mui/material/Slider";
 import Switch from "@mui/material/Switch";
 import { MdArrowBackIos } from "react-icons/md";
 import { styled } from "@mui/material/styles";
-import { CirclePicker, HuePicker, SliderPicker } from "react-color";
+import { HuePicker, SliderPicker } from "react-color";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 // import { Link } from "react-router-dom";
 export const Section_3 = () => {
+  const matches = useMediaQuery("(min-width:1300px)");
   const input = useLocation();
   const [item, setItem] = useState([input.state.item]);
   const [color, setColor] = useState([]);
@@ -179,7 +182,7 @@ export const Section_3 = () => {
             checked={item[0].state}
             onClick={(e) => handleChangeState(e.target.checked)}
           ></MaterialUISwitch>
-          <div style={{ color: "white", fontSize: "28px" }}>وضعیت چراغ</div>
+          <div className="section-3-state-name-style">وضعیت چراغ</div>
         </div>
         <div className="section-3-border-container section-3-speed-intensity ">
           <div className="section-3-speed-intensity-name-border">
@@ -224,11 +227,10 @@ export const Section_3 = () => {
         <div className="section-3-border-container section-3-speed-intensity">
           <div className="section-3-speed-intensity-name-border">
             <button
+              className="section-3-color-shown-button"
               style={{
-                width: 90,
-                height: 41,
-                border: "none",
-                borderRadius: 25,
+                // {matches ? {"width: 90" ,"height: 41"} }
+
                 backgroundColor: color.background,
               }}
             ></button>
@@ -236,7 +238,7 @@ export const Section_3 = () => {
           </div>
           {/* div.hue-horizontal for this part css */}
           <HuePicker
-            width={"500px"}
+            width={matches ? "500px" : "350px"}
             color={color.background}
             onChange={(e, color) => handleChangeColor(e, color)}
           />

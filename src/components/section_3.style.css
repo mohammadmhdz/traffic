@@ -6,9 +6,12 @@
 
 .section-3-main-container {
   background-image: url(../img/light-3-1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* height: 100%; */
   max-width: 120rem;
   /* max-height: 1024px; */
-  /* height: 100vh; */
+  height: 100vh;
   /* padding: 0 3.2rem; */
   margin: 0 auto;
   background-color: #2a2c32;
@@ -64,6 +67,10 @@
   align-items: center;
   gap: 20px;
 }
+.section-3-state-name-style {
+  font-size: 28px;
+  color: white;
+}
 .section-3-speed-intensity {
   flex-direction: column;
 }
@@ -90,6 +97,12 @@
   right: 8%; */
   /* overflow: hidden; */
   /* background-color: #2a2c32; */
+}
+.section-3-color-shown-button {
+  width: 90px;
+  height: 41px;
+  border: none;
+  border-radius: 25px;
 }
 .section-3-border-container-name-slider {
   /* display: flex; */
@@ -140,7 +153,6 @@
 }
 
 div.hue-horizontal {
-  border-radius: 20px;
   background: linear-gradient(
     to right,
 
@@ -154,6 +166,7 @@ div.hue-horizontal {
   );
 }
 .section-3-submit-button {
+  border: none;
   width: 100%;
   display: inline-block;
   text-decoration: none;

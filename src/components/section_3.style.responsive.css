@@ -1,0 +1,43 @@
+@media (max-width: 1300px) {
+  .section-3-main-container {
+    /* zoom: 85%; */
+    /* overflow-y: hidden;
+    overflow-x: hidden; */
+
+    /* height: 720px; */
+    /* transform: scale(0.9); */
+  }
+  .section-3-left-main-container {
+    margin: 20px 40px 50px 0px;
+    padding: 2rem 2rem 2rem 2rem;
+    gap: 25px;
+  }
+
+  .section-3-border-container {
+    padding: 12px 16px 12px 16px;
+    width: 450px;
+    gap: 10px;
+  }
+  .section-3-state-name-style {
+    font-size: 20px;
+  }
+  .section-3-speed-intensity-percentage {
+    font-size: 16px;
+    padding: 0.2rem 1.5rem 0.2rem 1.5rem;
+  }
+  .section-3-border-container-name {
+    font-size: 20px;
+  }
+  .section-3-color-shown-button {
+    width: 70px;
+    height: 25px;
+  }
+  .section-3-submit-button {
+    padding: 1rem 0rem;
+    font-size: 24px;
+  }
+  .section-3-back-button {
+    gap: 1rem;
+    font-size: 25px;
+  }
+}
