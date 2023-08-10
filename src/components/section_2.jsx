@@ -3,7 +3,12 @@ import { Link } from "react-router-dom";
 import light from "../img/light-2-2.png";
 import light3 from "../img/light-3.png";
 import "./section_2.style.css";
+import "./section_2.style.responsive.css";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 export const Section_2 = (lights = {}) => {
+  const matches = useMediaQuery("(min-width:1500px)");
+
   const {
     ip = "test1",
     state = true,
@@ -42,7 +47,10 @@ export const Section_2 = (lights = {}) => {
                         state={{ item: items, data: lights }}
                         className="section-2-link-style"
                       >
-                        <FiSettings className="fiSetting-button" size={48} />
+                        <FiSettings
+                          className="fiSetting-button"
+                          size={matches ? 37 : 48}
+                        />
                       </Link>
                     </button>
                     <div className="details-grid-container-state">
