@@ -187,21 +187,23 @@ export const Section_1 = () => {
     //     return resJson;
     //   });
     // ---------------------------
-    // axios
-    //   .get("http://193.36.84.113:8080/system/data", {
-    //     headers: {
-    //       "Access-Control-Allow-Origin": "*", // Replace '*' with your desired origin or specific domain
-    //       "Content-Type": "application/json",
-    //     },
-    //   })
-    //   .then((response) => {
-    //     // Handle the response data here
-    //     console.log(response.data);
-    //   })
-    //   .catch((error) => {
-    //     // Handle any errors that occur during the request
-    //     console.error("Error fetching data:", error);
-    //   });
+    axios
+      .get("http://193.36.84.113:8080/system/data")
+      .then((response) => {
+        // Handle the response data here
+        console.log(response.data);
+      })
+      .catch((error) => {
+        // Handle any errors that occur during the request
+        console.error("Error fetching data:", error);
+      });
+    axios
+      .post("http://193.36.84.113:8080/system/ctrl", {
+        client: "dorod bar to",
+      })
+      .then((response) => {
+        console.log(response.data);
+      });
   }, []);
 
   // preparing the data and sen it

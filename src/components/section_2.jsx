@@ -49,7 +49,7 @@ export const Section_2 = (lights = {}) => {
                       >
                         <FiSettings
                           className="fiSetting-button"
-                          size={matches ? 37 : 48}
+                          size={matches ? 48 : 37}
                         />
                       </Link>
                     </button>
