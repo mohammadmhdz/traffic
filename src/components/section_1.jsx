@@ -16,7 +16,7 @@ export const Section_1 = () => {
   const [checked, setChecked] = useState([
     {
       ip: 0,
-      state: false,
+      state: 0,
       speed: 2,
       whiteColor: 10,
       yellowColor: 20,
@@ -28,7 +28,7 @@ export const Section_1 = () => {
     },
     {
       ip: 1,
-      state: true,
+      state: 1,
       speed: 2,
       whiteColor: 10,
       yellowColor: 20,
@@ -40,7 +40,7 @@ export const Section_1 = () => {
     },
     {
       ip: 2,
-      state: false,
+      state: 0,
       speed: 2,
       whiteColor: 10,
       yellowColor: 20,
@@ -52,7 +52,7 @@ export const Section_1 = () => {
     },
     {
       ip: 3,
-      state: false,
+      state: 0,
       speed: 2,
       whiteColor: 10,
       yellowColor: 20,
@@ -197,13 +197,13 @@ export const Section_1 = () => {
         // Handle any errors that occur during the request
         console.error("Error fetching data:", error);
       });
-    axios
-      .post("http://193.36.84.113:8080/system/ctrl", {
-        client: "dorod bar to",
-      })
-      .then((response) => {
-        console.log(response.data);
-      });
+    //   axios
+    //     .post("http://193.36.84.113:8080/system/ctrl", {
+    //       client: "dorod bar to",
+    //     })
+    //     .then((response) => {
+    //       console.log(response.data);
+    //     });
   }, []);
 
   // preparing the data and sen it

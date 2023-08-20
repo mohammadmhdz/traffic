@@ -11,7 +11,7 @@ export const Section_2 = (lights = {}) => {
 
   const {
     ip = "test1",
-    state = true,
+    state = 1,
     speed = 2,
     whiteColor = "test",
     yellowColor = "test",

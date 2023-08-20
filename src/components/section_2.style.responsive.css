@@ -35,8 +35,8 @@
     padding: 50px 50px 50px 50px;
   }
   .buttons-style-details {
-    width: 47px;
-    height: 47px;
+    /* width: 47px;
+    height: 47px; */
     border-radius: 15px 15px 15px 15px;
   }
   .background-light {

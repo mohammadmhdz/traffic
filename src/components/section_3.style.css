@@ -152,19 +152,17 @@
   /* z-index: 1; */
 }
 
-div.hue-horizontal {
-  background: linear-gradient(
-    to right,
-
-    #f00 0%,
-    #ff0 17%,
-    #0f0 33%,
-    #0ff 50%,
-    #00f 67%,
-    #f0f 83%,
-    #f00 100%
-  );
+/* div.github-picker {
+  background: black;
+} */
+div.github-picker.section-3-sliderPicker {
+  display: flex !important;
+  width: 400px !important;
+  /* display: flex; */
+  justify-content: space-between;
+  /* background-color: black !important; */
 }
+
 .section-3-submit-button {
   border: none;
   width: 100%;
@@ -181,4 +179,23 @@ div.hue-horizontal {
 }
 .section-3-sliderPicker {
   width: 100%;
+}
+.container-yellow-white-color-picker {
+  display: flex;
+  gap: 3px;
+}
+.span-yellow-white-color-picker {
+  width: 80px;
+  height: 20px;
+}
+.div-yellow-white-color-picker {
+  height: 100%;
+  /* width: 100%; */
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+.color-disabled-error-message {
+  color: white;
+  font-size: 25px;
 }
